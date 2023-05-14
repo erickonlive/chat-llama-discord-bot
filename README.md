@@ -7,7 +7,7 @@ Un bot de Discord para chatear con LLaMA. No incluye RLHF, pero LLaMA es bastant
 </div>
 
 # Installación
-1. Obten LLaMA e instala con https://github.com/oobabooga/text-generation-webui (más información [abajo](#llama-setup-normal8bit4bit-for-text-generation-webui))
+1. Obten LLaMA e instala con https://github.com/oobabooga/text-generation-webui (más información [abajo](#Configuración de LLaMA (normal/8bit/4bit) para `text-generation-webui`.))
 
 2. Instala discord.py con `pip install discord`.
 
