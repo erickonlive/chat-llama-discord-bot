@@ -64,7 +64,7 @@ conda activate textgen
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 git clone https://github.com/oobabooga/text-generation-webui
 cd text-generation-webui
-pip install -r requisitos.txt
+pip install -r requirements.txt
 ```
 4. **Sólo para Windows**: Sigue las instrucciones [aquí](https://github.com/oobabooga/text-generation-webui/issues/20#issuecomment-1411650652) para arreglar la librería bitsandbytes.
 5. **Sólo Linux**: Siga las instrucciones [aquí](https://github.com/TimDettmers/bitsandbytes/issues/156#issuecomment-1462329713) para corregir la librería bitsandbytes.
@@ -74,8 +74,8 @@ pip install -r requisitos.txt
 Ejecute estos comandos:
 ```
 conda install -c conda-forge cudatoolkit-dev
-mkdir repositorios
-cd repositorios
+mkdir repositories
+cd repositories
 git clone https://github.com/qwopqwop200/GPTQ-for-LLaMa
 cd GPTQ-for-LLaMa
 git reset --hard 468c47c01b4fe370616747b6d69a2d3f48bab5e4
