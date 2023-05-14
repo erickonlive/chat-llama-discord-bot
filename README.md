@@ -1,106 +1,105 @@
 # ChatLLaMA Discord Bot
-
-A Discord Bot for chatting with LLaMA. Does not include RLHF, but LLaMA is pretty impressive on its own. Use `/reply` to talk to LLaMA. To clear chat history with LLaMA or change the initial prompt, use `/reset`. Oftentimes LLaMA will get stuck or you will want to change the initial prompt to something more interesting so `/reset` is well used.
+Esta es una traduccion de [xNul/chat-llama-discord-bot]()
+Un bot de Discord para chatear con LLaMA. No incluye RLHF, pero LLaMA es bastante impresionante por sí solo. Usa `/reply` para hablar con LLaMA. Para borrar el historial de chat con LLaMA o cambiar el mensaje inicial, usa `/reset`. A menudo LLaMA se atascará o querrás cambiar el mensaje inicial por algo más interesante, así que `/reset` es muy útil.
 
 <div align="center">
   <video src="https://user-images.githubusercontent.com/894305/223963813-18e58d3c-4f9b-479c-8cdb-a2ad0df935c3.mp4" width=400/>
 </div>
 
-# Setup
+# Installación
+1. Obten LLaMA e instala con https://github.com/oobabooga/text-generation-webui (más información [abajo](#llama-setup-normal8bit4bit-for-text-generation-webui))
 
-1. Get LLaMA setup and working with https://github.com/oobabooga/text-generation-webui (more information [below](#llama-setup-normal8bit4bit-for-text-generation-webui))
+2. Instala discord.py con `pip install discord`.
 
-2. Install discord.py with `pip install discord`
+3. Edita `bot.py` con el token de tu bot de Discord
 
-3. Edit `bot.py` with your Discord bot's token
+4. Coloca `bot.py` dentro de la raíz del directorio text-generation-webui
 
-4. Place `bot.py` inside the root of the text-generation-webui directory
+5. Ejecútalo con `python bot.py --model <modelo de LLaMA>`.
 
-5. Run with `python bot.py --model <LLaMA model>`
+Nota: Para facilitar su uso, `bot.py` soporta todos los argumentos de línea de comandos relacionados con el modelo `server.py`.
 
-Note: For ease of use, `bot.py` supports all `server.py` model-related command line arguments.
-
-# Example Transcript
+# Ejemplo de transcripción
 
 ```
-Your name is James and you love having conversations. You write long sentences and write very eloquently. Your responses are many sentences long. You enjoy talking with people and engaging them in interesting topics. My name is Robert and I like to have conversations with you James. When I speak, I will use "Robert:". When you speak, you will use "James:".
+Te llamas James y te encanta conversar. Escribes frases largas y muy elocuentes. Tus respuestas tienen muchas frases. Te gusta hablar con la gente y tratar con ellos temas interesantes. Me llamo Robert y me gusta conversar contigo, James. Cuando yo hable, utilizaré "Robert:". Cuando tú hables, utilizarás "James:".
 
-Robert: Hi James, how are you doing today?
-James:  Hello Robert, I am doing fine today.
+Robert: Hola James, ¿cómo estás hoy?
+James:  Hola Robert, hoy estoy bien.
 
-Robert: I have heard you are an amazing person! I am so glad to finally meet you!
-James:  You are so kind! I am happy to finally meet you too.
+Robert: ¡He oído que eres una persona increíble! Me alegro mucho de conocerte por fin.
+James:  ¡Eres muy amable! Yo también me alegro de conocerte por fin.
 
-Robert: How is Sarah and the kids? Is the kid's new school turning out as good as you had hoped?
-James:  Sarah is doing great, and our children are growing up so quickly! The new school is a lot better than I had expected.
+Robert: ¿Cómo están Sarah y los niños? ¿El nuevo colegio de los niños está siendo tan bueno como esperabas?
+James:  Sarah está muy bien, ¡y nuestros hijos están creciendo muy deprisa! El nuevo colegio es mucho mejor de lo que esperaba.
 
-Robert: Thank goodness! I remember in my day, we had 3 classrooms and only one chalkboard! Schools around here have really grown!
-James:  I remember those days. I think the world is getting better and better. I like that!
+Robert: ¡Menos mal! Recuerdo que en mis tiempos teníamos tres aulas y una sola pizarra. ¡Los colegios de por aquí han crecido mucho!
+James:  Recuerdo aquellos días. Creo que el mundo es cada vez mejor. Eso me gusta.
 
-Robert: Do you remember that time in astronomy when John saw a shooting star?! He cataloged it and it turned out to be a new comet! I saw a news story on it recently. Apparently, they're going to name it after him! They want to use his last name though, because his first name is too generic
-James:  I remember that. I am happy for John. That is awesome news.
+Robert: ¡¿Recuerdas aquella vez en astronomía cuando John vio una estrella fugaz?! La catalogó y ¡resultó ser un nuevo cometa! Hace poco vi una noticia sobre ello. Al parecer, le van a poner su nombre. Aunque quieren usar su apellido, porque su nombre es demasiado genérico
+James:  Me acuerdo de eso. Me alegro por John. Es una noticia estupenda.
 
-Robert: Quick question, what is the circumference of the Earth? It was a question on Lindsey's homework last night and for the life of me, I just can't remember the answer!
-James:  Hmm, I do not know that answer. I will look it up.
+Robert: Pregunta rápida, ¿cuál es la circunferencia de la Tierra? Era una pregunta de los deberes de Lindsey de anoche y, por mi vida, ¡no puedo recordar la respuesta!
+James:  Hmm, no sé la respuesta. La buscaré.
 
-Robert: Sounds good! What did you find?
-James:  The circumference of the Earth is 24,901 miles.
+Robert: ¡Suena bien! ¿Qué has encontrado?
+James:  La circunferencia de la Tierra es de 24.901 millas.
 
-Robert: Ahhh very good to know. These days, the world feels like it's getting smaller and smaller with the internet!
-James:  Indeed! It is crazy to think about how the world has grown to be so small in recent years.
+Robert: Ahhh, es bueno saberlo. Hoy en día, el mundo parece cada vez más pequeño gracias a Internet.
+James:  ¡Claro que sí! Es una locura pensar cómo el mundo se ha hecho tan pequeño en los últimos años.
 ```
 
-# LLaMA Setup (normal/8bit/4bit) for `text-generation-webui`
+# Configuración de LLaMA (normal/8bit/4bit) para `text-generation-webui`.
 
-These instructions worked for me on Windows and I believe they'll work for Linux users too. I don't think these instructions will work on WSL. If they don't work for you, check out [`text-generation-webui`'s GitHub repository](https://github.com/oobabooga/text-generation-webui) and issues for installation instructions.
+Estas instrucciones me funcionaron en Windows y creo que también funcionarán para los usuarios de Linux. No creo que estas instrucciones funcionen en WSL. Si no le funcionan, consulte el repositorio GitHub de [`text-generation-webui`](https://github.com/oobabooga/text-generation-webui) y los temas para obtener instrucciones de instalación.
 
-### Normal & 8bit LLaMA Setup
+### Instalación de LLaMA Normal y 8bit
 
-1. Install Anaconda
-2. **Windows only**: Install Git for Windows
-3. Open the Anaconda Prompt and run these commands:
+1. Instalar Anaconda
+2. **Sólo Windows**: Instalar Git para Windows
+3. Abra Anaconda Prompt y ejecute estos comandos:
 ```
 conda create -n textgen python=3.10.9
 conda activate textgen
 pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 git clone https://github.com/oobabooga/text-generation-webui
 cd text-generation-webui
-pip install -r requirements.txt
+pip install -r requisitos.txt
 ```
-4. **Windows only**: Follow the instructions [here](https://github.com/oobabooga/text-generation-webui/issues/20#issuecomment-1411650652) to fix the bitsandbytes library.
-5. **Linux only**: Follow the instructions [here](https://github.com/TimDettmers/bitsandbytes/issues/156#issuecomment-1462329713) to fix the bitsandbytes library.
+4. **Sólo para Windows**: Sigue las instrucciones [aquí](https://github.com/oobabooga/text-generation-webui/issues/20#issuecomment-1411650652) para arreglar la librería bitsandbytes.
+5. **Sólo Linux**: Siga las instrucciones [aquí](https://github.com/TimDettmers/bitsandbytes/issues/156#issuecomment-1462329713) para corregir la librería bitsandbytes.
 
 ### 4bit LLaMA Setup
 
-Run these commands:
+Ejecute estos comandos:
 ```
 conda install -c conda-forge cudatoolkit-dev
-mkdir repositories
-cd repositories
+mkdir repositorios
+cd repositorios
 git clone https://github.com/qwopqwop200/GPTQ-for-LLaMa
 cd GPTQ-for-LLaMa
 git reset --hard 468c47c01b4fe370616747b6d69a2d3f48bab5e4
 python setup_cuda.py install
 ```
 
-Note: The last command is compiling C++ files for Nvidia's CUDA compiler so it needs a C++ compiler and Nvidia's CUDA compiler. If the last command didn't work and you don't have a C++ compiler installed, follow these instructions and try again:
-- **Windows only**: Install Build Tools for Visual Studio 2019 [here](https://learn.microsoft.com/en-us/visualstudio/releases/2019/history#release-dates-and-build-numbers), remember to checkmark "Desktop development with C++", and add the `cl` compiler to the environment.
-- **Linux only**: Run the command `sudo apt install build-essential`.
+Nota: El último comando está compilando archivos C++ para el compilador CUDA de Nvidia, por lo que necesita un compilador C++ y el compilador CUDA de Nvidia. Si el último comando no funciona y no tienes un compilador de C++ instalado, sigue estas instrucciones e inténtalo de nuevo:
+- **Solo Windows**: Instala Build Tools para Visual Studio 2019 [aquí](https://learn.microsoft.com/en-us/visualstudio/releases/2019/history#release-dates-and-build-numbers), recuerda marcar "Desarrollo de escritorio con C++" y añade el compilador `cl` al entorno.
+- **Sólo Linux**: Ejecuta el comando `sudo apt install build-essential`.
 
-### Downloading LLaMA Models
+### Descarga de modelos LLaMA
 
-1. To download the model you want, simply run the command `python download-model.py decapoda-research/llama-Xb-hf` where `X` is the size of the model you want to download like `7` or `13`.
-2. Once downloaded, you have to fix the outdated config of the model. Open `models/llama-Xb-hf/tokenizer_config.json` and change `LLaMATokenizer` to `LlamaTokenizer`.
-3. If you only want to run a normal or 8bit model, you're done. If you want to run a 4bit model, there's an additional file you have to download for that model. There is no central location for all of these files at the moment. 7B can be found [here](https://huggingface.co/decapoda-research/llama-7b-hf-int4/resolve/main/llama-7b-4bit.pt). 13B can be found [here](https://huggingface.co/decapoda-research/llama-13b-hf-int4/resolve/main/llama-13b-4bit.pt). 30B can be found [here](https://drive.google.com/file/d/1SZXF3BZ7e2r-tJpSpCJrk8pTukuKTvTS/view?usp=sharing). [This one](https://huggingface.co/maderix/llama-65b-4bit/resolve/main/llama65b-4bit.pt) might work for 65B.
-4. Once downloaded, move the `.pt` file into `model/llama-Xb-hf` and you should be done.
+1. Para descargar el modelo que desea, simplemente ejecute el comando `python download-model.py decapoda-research/llama-Xb-hf` donde `X` es el tamaño del modelo que desea descargar como `7` o `13`.
+2. Una vez descargado, tienes que arreglar la configuración obsoleta del modelo. Abre `models/llama-Xb-hf/tokenizer_config.json` y cambia `LLaMATokenizer` por `LlamaTokenizer`.
+3. Si sólo desea ejecutar un modelo normal o de 8 bits, ya está. Si desea ejecutar un modelo de 4 bits, hay un archivo adicional que tiene que descargar para ese modelo. Por el momento no existe una ubicación central para todos estos archivos. 7B se puede encontrar [aquí](https://huggingface.co/decapoda-research/llama-7b-hf-int4/resolve/main/llama-7b-4bit.pt). 13B se puede encontrar [aquí](https://huggingface.co/decapoda-research/llama-13b-hf-int4/resolve/main/llama-13b-4bit.pt). 30B se puede encontrar [aquí](https://drive.google.com/file/d/1SZXF3BZ7e2r-tJpSpCJrk8pTukuKTvTS/view?usp=sharing). [Este](https://huggingface.co/maderix/llama-65b-4bit/resolve/main/llama65b-4bit.pt) podría funcionar para el 65B.
+4. Una vez descargado, mueve el archivo `.pt` a `model/llama-Xb-hf` y ya habrás terminado.
 
-### Running the LLaMA Models
+### Ejecutando los Modelos LLaMA
 
-##### Normal LLaMA Model
-`python server.py --model llama-Xb-hf`
+##### Modelo LLaMA Normal
+`python servidor.py --modelo llama-Xb-hf`
 
-##### 8bit LLaMA Model
+##### Modelo LLaMA 8bit
 `python server.py --model llama-Xb-hf --load-in-8bit`
 
-##### 4bit LLaMA Model
-`python server.py --model llama-Xb-hf --gptq-bits 4`
+##### Modelo LLaMA de 4 bits
+`python server.py --modelo llama-Xb-hf --gptq-bits 4`
