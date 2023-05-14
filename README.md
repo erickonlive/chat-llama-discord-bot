@@ -69,7 +69,7 @@ pip install -r requisitos.txt
 4. **Sólo para Windows**: Sigue las instrucciones [aquí](https://github.com/oobabooga/text-generation-webui/issues/20#issuecomment-1411650652) para arreglar la librería bitsandbytes.
 5. **Sólo Linux**: Siga las instrucciones [aquí](https://github.com/TimDettmers/bitsandbytes/issues/156#issuecomment-1462329713) para corregir la librería bitsandbytes.
 
-### 4bit LLaMA Setup
+###Configuración 4bit LLaMA
 
 Ejecute estos comandos:
 ```
