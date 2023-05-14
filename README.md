@@ -49,7 +49,7 @@ Robert: Ahhh, es bueno saberlo. Hoy en día, el mundo parece cada vez más peque
 James:  ¡Claro que sí! Es una locura pensar cómo el mundo se ha hecho tan pequeño en los últimos años.
 ```
 
-# Configuración de LLaMA (normal/8bit/4bit) para `text-generation-webui`.
+#Configuración de LLaMA (normal/8bit/4bit) para `text-generation-webui`.
 
 Estas instrucciones me funcionaron en Windows y creo que también funcionarán para los usuarios de Linux. No creo que estas instrucciones funcionen en WSL. Si no le funcionan, consulte el repositorio GitHub de [`text-generation-webui`](https://github.com/oobabooga/text-generation-webui) y los temas para obtener instrucciones de instalación.
 
